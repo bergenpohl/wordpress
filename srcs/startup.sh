@@ -11,14 +11,14 @@ openssl req -newkey rsa:4096 \
 		-keyout /etc/ssl/private/localhost.key
 
 rm -rf /etc/nginx/sites-enabled/*
-cp /root/srcs/wordpress.conf /etc/nginx/sites-enabled/
+cp /root/srcs/localhost.conf /etc/nginx/sites-enabled/
 
-mkdir /var/www/wordpress/
+mkdir /var/www/localhost/
 
 wget -O /root/srcs/latest.tar.gz https://wordpress.org/latest.tar.gz
 tar -xf /root/srcs/latest.tar.gz -C /root/srcs/
-cp -r /root/srcs/wordpress/* /var/www/wordpress/
-cp /root/srcs/wp-config.php /var/www/wordpress/wp-config.php
+cp -r /root/srcs/wordpress/* /var/www/localhost/
+cp /root/srcs/wp-config.php /var/www/localhost/wp-config.php
 
 chown www-data:www-data /var/www
 chown www-data:www-data -R /var/www/*
