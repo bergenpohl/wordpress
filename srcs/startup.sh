@@ -15,6 +15,8 @@ cp /root/srcs/wordpress.conf /etc/nginx/sites-enabled/
 
 mkdir /var/www/wordpress/
 
+wget -O /root/srcs/latest.tar.gz https://wordpress.org/latest.tar.gz
+tar -xf /root/srcs/latest.tar.gz -C /root/srcs/
 cp -r /root/srcs/wordpress/* /var/www/wordpress/
 cp /root/srcs/wp-config.php /var/www/wordpress/wp-config.php
 
